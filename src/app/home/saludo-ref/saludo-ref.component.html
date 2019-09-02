@@ -1,0 +1,11 @@
+<h2>Saludo - Referencias locales</h2>
+<div class="form-group">
+  <label for="nombre">Nombre</label>
+  <input type="text" class="form-control" 
+    name="nombre" id="nombre" placeholder="" #refNombre>
+</div>
+<button type="button" class="btn btn-primary" (click)="refNombre.value = refNombre.value">Saludar</button>
+<button type="button" class="btn btn-primary" (click)="refNombre.value = ''">Borrar</button>
+<div>
+    <p>Hola {{ refNombre.value }}</p>
+</div>

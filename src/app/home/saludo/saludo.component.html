@@ -1,0 +1,14 @@
+
+<h2>Saludo</h2>
+<div class="form-group">
+  <label for="nombre">Nombre</label>
+  <input type="text" class="form-control" 
+    name="nombre" id="nombre" [placeholder]="textoHelper" [(ngModel)]="nombre">
+</div>
+<button type="button" class="btn btn-primary" (click)="onClickBorrar($event)">Borrar</button>
+<div>
+    <p>Hola {{ nombre }}</p>
+    <p>{{3 + 3}}</p>
+    <p>{{ fecha.toLocaleDateString()}}</p>
+    <p> {{ (nombre.length > 8) ? 'Que nombre más largo' : '' }}</p>
+</div>
