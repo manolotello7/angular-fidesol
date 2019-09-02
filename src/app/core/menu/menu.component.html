@@ -3,13 +3,15 @@
         <nav class="col-12">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" [routerLink]="['home']" routerLinkActive="active" >
+                        Home</a>
+                    
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tareas</a>
+                    <a class="nav-link" [routerLink]="['tareas']" routerLinkActive="active">Tareas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" [routerLink]="['blog']" routerLinkActive="active">Blog</a>
                 </li>
             </ul>
         </nav>
