@@ -1,0 +1,21 @@
+<h2>Lista simple</h2>
+
+<div class="form-group">
+  <label for="new-tarea">Nueva tarea</label>
+  <input type="text" class="form-control" 
+    name="new-tarea" id="new-tarea" [placeholder]="mensaje" [(ngModel)]="newTarea.nombre">
+</div>
+<button type="button" class="btn btn-primary" (click)="addTarea()">Añadir</button>
+<div *ngIf="aTareas.length; else sintareas">
+    <h3>Lista de tareas</h3>
+    <ul>
+        <li *ngFor="let item of aTareas; let i = index" >
+            <input type="checkbox" name="is-completed" id="is-completed" 
+                [(ngModel)]="item.isComplete" (change)='onChangeCheck()'>
+            <span [ngClass]='{completed: item.isComplete}'>{{ item.nombre }}</span>
+            <span class="boton" (click)='onClickBorrar(i)'>🗑️</span></li>
+    </ul>    
+</div>
+<ng-template #sintareas>
+    <p>Animate a añadir alguna tarea</p>
+</ng-template>
