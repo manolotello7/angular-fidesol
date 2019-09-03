@@ -5,8 +5,8 @@ import { Directive, ElementRef } from '@angular/core';
 })
 export class DestacarDirective {
 
-  constructor(public eTarget: ElementRef) { 
-    console.log( this.eTarget);
+  constructor() { 
+    //console.log( eTarget);
   }
 
 }
