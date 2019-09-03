@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="new-tarea">Nueva tarea</label>
+    <input type="text" class="form-control" 
+        name="new-tarea" id="new-tarea" [placeholder]="mensaje" 
+        [(ngModel)]="newTarea.nombre">
+</div>
+<button type="button" class="btn btn-primary" 
+(click)="sendAddTarea()">Añadir</button>
+

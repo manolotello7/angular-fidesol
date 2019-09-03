@@ -1,0 +1,16 @@
+<h3>Lista-plus</h3>
+
+<sol-nueva-tarea (addTarea)="addTarea($event)"></sol-nueva-tarea>
+
+<div *ngIf="aTareas.length; else sintareas">
+    <h3>Lista de tareas</h3>
+    <ul>
+        <li *ngFor="let item of aTareas; let i = index">
+            <sol-tarea [tarea]='item' [i]='i'
+            (changeTarea)='changeTarea($event)' (deleteTarea)='deleteTarea($event)'>
+        </sol-tarea>
+    </ul>    
+</div>
+<ng-template #sintareas>
+    <p>Animate a añadir alguna tarea</p>
+</ng-template>
