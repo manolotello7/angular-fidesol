@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CursosComponent } from './cursos.component';
 import { FormMDComponent } from './form-md/form-md.component';
 import { FormTDComponent } from './form-td/form-td.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('CursosComponent', () => {
   let component: CursosComponent;
@@ -12,7 +12,7 @@ describe('CursosComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CursosComponent, FormMDComponent, FormTDComponent ],
-      imports: [FormsModule]
+      imports: [FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));
