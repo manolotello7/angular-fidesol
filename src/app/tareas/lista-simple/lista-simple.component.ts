@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TareaModel } from 'src/app/models/tarea.model';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'sol-lista-simple',
@@ -11,13 +12,14 @@ export class ListaSimpleComponent implements OnInit {
   aTareas: Array<TareaModel>;
   mensaje: string;
 
-  constructor() { }
+  constructor(public storage: StorageService) { }
 
   ngOnInit() {
     this.mensaje = 'Describe la tarea';
     this.newTarea = new TareaModel();
-    if (localStorage.getItem('tareas')) {
-      this.aTareas = JSON.parse(localStorage.getItem('tareas'));
+    this.storage.setClave('tareas')
+    if (this.storage.getJson()) {
+      this.aTareas = this.storage.getJson();
     } else {
       this.aTareas = [];
     }
@@ -28,17 +30,17 @@ export class ListaSimpleComponent implements OnInit {
       return;
     }
     this.aTareas.push(this.newTarea);
-    localStorage.setItem('tareas', JSON.stringify(this.aTareas));
+    this.storage.setJson(this.aTareas);
     this.newTarea = new TareaModel();
     console.log(this.aTareas);
   }
 
   onChangeCheck() {
-    localStorage.setItem('tareas', JSON.stringify(this.aTareas));
+    this.storage.setJson(this.aTareas);
   }
 
   onClickBorrar(i) {
     this.aTareas.splice(i, 1);
-    localStorage.setItem('tareas', JSON.stringify(this.aTareas));
+    this.storage.setJson(this.aTareas);
   }
 }
