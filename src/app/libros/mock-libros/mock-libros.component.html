@@ -1,0 +1,18 @@
+<h3>Mock de libros</h3>
+<div class="form-group">
+  <label for="in-clave">Busqueda por titulo</label>
+  <input type="text" class="form-control" id="in-clave" [(ngModel)]='clave' 
+    (change)="onChangeAsinc()">
+</div>
+<div class="resultads" *ngIf="aLibros.length">
+    <h4>Libros sobre {{ busqueda }}</h4>
+    <ul>
+        <li *ngFor="let libro of aLibros">
+            <span>{{libro.autor}}</span> | 
+            <span>{{libro.titulo}}</span>
+        </li>
+    </ul>
+</div>
+<div class="errores" *ngIf="error">
+    <p>{{ error }}</p>
+</div>
