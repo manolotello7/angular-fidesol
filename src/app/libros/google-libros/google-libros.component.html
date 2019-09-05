@@ -6,7 +6,11 @@
 </div>
 <div>
     <button type="button" class="btn btn-primary"
-    (onclick)="buscar()">Buscar</button>
+    (click)="buscar()">Buscar</button>
+    <button ype="button" class="btn btn-primary"
+    (click)="buscarBySrv2()">Buuscar: Srv</button>
+    <button ype="button" class="btn btn-primary"
+    (click)="buscarBySrvRx()">Buuscar: SrvRx</button>
 </div>
 
 <div class="resultads" *ngIf="aLibros.length">

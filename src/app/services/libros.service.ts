@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { LIBROS } from '../models/libro.data';
 import { LibroModel } from '../models/libro.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LibrosService {
 
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
   getMock(clave: string): Array<LibroModel> {
     if (clave) {
@@ -29,5 +33,25 @@ export class LibrosService {
     }
   }
 
+  get(clave: string): Promise<Array<LibroModel>> {
+    const url = environment.urlLibros + clave;
+    return this.http.get(url).toPromise()
+    .then( response => Promise.resolve(this.procesar(response)));
+  }
 
+  getRx(clave: string): Observable<Array<LibroModel>> {
+    const url = environment.urlLibros + clave;
+    console.log(url);
+    return this.http.get(url)
+    .pipe( map( item => this.procesar(item)));
+  }
+
+  procesar(response) {
+    response = response.items.map( item => item.volumeInfo);
+    response = response.map(item => {
+      const autorString = item.authors ? item.authors.toString() : 's/a';
+      return {autor: autorString, titulo: item.title};
+    });
+    return response;
+  }
 }
