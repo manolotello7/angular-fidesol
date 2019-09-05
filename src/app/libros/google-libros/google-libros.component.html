@@ -1,0 +1,23 @@
+<h3>Libros en Google</h3>
+<div class="form-group">
+  <label for="in-clave">Busqueda por titulo</label>
+  <input type="text" class="form-control" id="in-clave" 
+    [(ngModel)]='clave'>
+</div>
+<div>
+    <button type="button" class="btn btn-primary"
+    (onclick)="buscar()">Buscar</button>
+</div>
+
+<div class="resultads" *ngIf="aLibros.length">
+    <h4>Libros sobre {{ busqueda }}</h4>
+    <ul>
+        <li *ngFor="let libro of aLibros">
+            <span>{{libro.autor}}</span> | 
+            <span>{{libro.titulo}}</span>
+        </li>
+    </ul>
+</div>
+<div class="errores" *ngIf="error">
+    <p>{{ error }}</p>
+</div>
