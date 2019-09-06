@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   urlLibros:  'https://www.googleapis.com/books/v1/volumes?q=intitle:',
-  urlMisLibros: 'http://localhost:3000/libros'
+  urlMisLibros: 'http://localhost:3000/libros/'
 };
 
 /*

@@ -54,9 +54,4 @@ export class LibrosService {
     });
     return response;
   }
-
-  setMisLibros(libro) {
-    const url = environment.urlMisLibros;
-    return this.http.post(url, libro);
-  }
 }
