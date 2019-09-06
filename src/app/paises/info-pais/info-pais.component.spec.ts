@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InfoPaisComponent } from './info-pais.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('InfoPaisComponent', () => {
   let component: InfoPaisComponent;
@@ -8,7 +10,8 @@ describe('InfoPaisComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfoPaisComponent ]
+      declarations: [ InfoPaisComponent ],
+      imports: [HttpClientModule, RouterTestingModule]
     })
     .compileComponents();
   }));

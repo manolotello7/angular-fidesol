@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MockLibrosComponent } from './mock-libros.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('MockLibrosComponent', () => {
   let component: MockLibrosComponent;
@@ -8,7 +10,8 @@ describe('MockLibrosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MockLibrosComponent ]
+      declarations: [ MockLibrosComponent ],
+      imports: [FormsModule, HttpClientModule]
     })
     .compileComponents();
   }));
