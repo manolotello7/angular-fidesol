@@ -24,10 +24,18 @@ const routes: Routes = [
     path: 'cursos',
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)
   },
-    {
-      path: 'libros',
-      loadChildren: () => import('./libros/libros.module').then(m => m.LibrosModule)
-    },
+  {
+    path: 'libros',
+    loadChildren: () => import('./libros/libros.module').then(m => m.LibrosModule)
+  },
+  {
+    path: 'paises',
+    loadChildren: () => import('./paises/paises.module').then(m => m.PaisesModule)
+  },
+  {
+    path: 'paises/:id',
+    loadChildren: () => import('./paises/paises.module').then(m => m.PaisesModule)
+  },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home' }
 ];

@@ -14,7 +14,7 @@ export class MislibrosService {
   }
 
   setLibro(libro: IndexedLibroModel): Observable<IndexedLibroModel>   {
-    return this.http.post(this.urlBase, libro) as Observable<IndexedLibroModel>; ;
+    return this.http.post(this.urlBase, libro) as Observable<IndexedLibroModel>;
   }
 
   getLibros(): Observable<Array<IndexedLibroModel>> {

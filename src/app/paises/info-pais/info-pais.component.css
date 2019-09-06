@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info {
+    width: 60%
+}
+.flag {
+    width: 40%;
+}
+
+.flag img {
+    max-width: 100%;
+}

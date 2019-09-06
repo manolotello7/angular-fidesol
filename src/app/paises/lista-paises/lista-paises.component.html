@@ -1,0 +1,15 @@
+<h3>Paises</h3>
+<div class="form-group">
+  <label for="sel-continentes">Continentes</label>
+  <select class="form-control" id="sel-continentes" [(ngModel)] = "selContinent"
+  (change)="onChangeContinent()">
+    <option *ngFor="let item of aContinentes"
+    [ngValue]='item'>{{item.nombre}}</option>
+  </select>
+</div>
+<div *ngIf="selContinent">
+    <h4>Paises de {{selContinent.nombre}}</h4>
+    <ul>
+        <li *ngFor="let item of aPaises"><a [routerLink]="item.alpha3Code" >{{item.name}}</a></li>
+    </ul>
+</div>
