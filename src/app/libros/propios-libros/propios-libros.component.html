@@ -1,0 +1,22 @@
+<h3>Mis Libros</h3>
+
+<div class="form-group">
+    <input type="text" class="form-control" 
+      id="new-autor" placeholder="Autor" [(ngModel)]="libro.autor">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" 
+      id="new-titulo" placeholder="titulo" [(ngModel)]="libro.titulo">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="addLibro()">Añadir</button>
+
+  <div *ngIf="aLibros.length">
+      <h4>Lista de libros</h4>
+      <ul>
+          <li *ngFor="let item of aLibros; let i = index">
+              <span>{{ item.autor }}</span> |
+              <span>{{ item.titulo }}</span>
+              <span class="boton" (click)='editarLibro(i)'>✍️️</span>
+              <span class="boton" (click)='borrarLibro(i)'>🗑️</span></li>
+      </ul>    
+  </div>

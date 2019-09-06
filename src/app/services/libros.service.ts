@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LIBROS } from '../models/libro.data';
 import { LibroModel } from '../models/libro.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -53,5 +53,10 @@ export class LibrosService {
       return {autor: autorString, titulo: item.title};
     });
     return response;
+  }
+
+  setMisLibros(libro) {
+    const url = environment.urlMisLibros;
+    return this.http.post(url, libro);
   }
 }

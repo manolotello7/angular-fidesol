@@ -1,3 +1,9 @@
 {
-    "libros" : [ {"autor": "William Gibson", "titulo": "Neuromante"} ]
+  "libros": [
+    {
+      "id": 1,
+      "autor": "William Gibson",
+      "titulo": "Neuromante"
+    }
+  ]
 }
